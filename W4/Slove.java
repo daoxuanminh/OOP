@@ -49,6 +49,43 @@ public class Slove {
                 double y = Dy / D;
                 System.out.printf("He phuong trinh co nghiem (x, y) = (%.2f, %.2f)", x, y);
             }
+        } else {
+            float a, b, c;
+
+            System.out.println("Giai phuong trinh bac hai!");
+            System.out.println("ax^2 + bx = c");
+
+            System.out.print("Nhap a: ");
+            a = input.nextFloat();
+            System.out.print("Nhap b: ");
+            b = input.nextFloat();
+            System.out.print("Nhap c: ");
+            c = input.nextFloat();
+            if (a == 0) {
+                if (b == 0) {
+                    System.out.println("Phuong trinh vo nghiem!");
+                } else {
+                    System.out.println("Phuong trinh co mot nghiem: " + "x = " + (-c / b));
+                }
+                System.exit(0);
+            }
+            // tính delta
+            float delta = b * b - 4 * a * c;
+            float x1;
+            float x2;
+            // tính nghiệm
+            if (delta > 0) {
+                x1 = (float) ((-b + Math.sqrt(delta)) / (2 * a));
+                x2 = (float) ((-b - Math.sqrt(delta)) / (2 * a));
+                System.out.println("Phuong trinh co 2 nghiem:"
+                        + "\nx1 = " + x1 + "\nx2 = " + x2);
+            } else if (delta == 0) {
+                x1 = (-b / (2 * a));
+                System.out.println("Phuong trinh co nghiem kep: "
+                        + "x1 = x2 = " + x1);
+            } else {
+                System.out.println("Phuong trinh vo nghiem!");
+            }
         }
     }
 }
