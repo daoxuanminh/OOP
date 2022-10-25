@@ -47,7 +47,7 @@ public class Slove {
             } else {
                 double x = Dx / D;
                 double y = Dy / D;
-                System.out.printf("He phuong trinh co nghiem (x, y) = (%f, %f)", x, y);
+                System.out.printf("He phuong trinh co nghiem (x, y) = (%.2f, %.2f)", x, y);
             }
         }
     }
