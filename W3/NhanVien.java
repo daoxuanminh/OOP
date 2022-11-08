@@ -10,10 +10,10 @@ public class NhanVien {
         return this.luongCoBan * this.heSoLuong;
     }
 
-    public boolean tangLuong(double value) {
-        this.heSoLuong += value;
+    // public boolean tangLuong(double value) {
+    //     this.heSoLuong += value;
 
-    }
+    // }
 
     public static void main(String[] args) {
 
