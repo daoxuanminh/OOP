@@ -15,9 +15,19 @@ public class Cart {
 
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		for (int i = 0; i < qtyOrdered; i++) {
-			if (itemsOrdered[i].equals(disc))
-				itemsOrdered[i] = null;
+			if (itemsOrdered[i].equals(disc)) {
+				for (int j = i; j < qtyOrdered - 1; j++) {
+					itemsOrdered[j] = itemsOrdered[j + 1];
+				}
+			}
+
 		}
+		itemsOrdered[qtyOrdered] = null;
+		qtyOrdered--;
+	}
+
+	public void coppy(DigitalVideoDisc a) {
+
 	}
 
 	public float TotalCost() {
