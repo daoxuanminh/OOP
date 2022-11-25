@@ -13,6 +13,20 @@ public class Cart {
 		}
 	}
 
+	public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
+		for (int i = 0; i < dvdList.length; i++) {
+			itemsOrdered[qtyOrdered] = dvdList[i];
+			qtyOrdered++;
+		}
+	}
+
+	public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+		itemsOrdered[qtyOrdered] = dvd1;
+		qtyOrdered++;
+		itemsOrdered[qtyOrdered] = dvd2;
+		qtyOrdered++;
+	}
+
 	public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
 		for (int i = 0; i < qtyOrdered; i++) {
 			if (itemsOrdered[i].equals(disc)) {
