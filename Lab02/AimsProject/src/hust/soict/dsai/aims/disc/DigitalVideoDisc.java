@@ -8,7 +8,7 @@ public class DigitalVideoDisc {
 	private float cost;
 	private static int nbDigitalVideoDiscs = 0;
 	private int id;
-topic/class-members
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
