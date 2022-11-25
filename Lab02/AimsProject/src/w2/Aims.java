@@ -2,7 +2,7 @@ package w2;
 
 public class Aims {
 	public static void main(String[] args) {
-		// thu merge branch 1
+		// thu merge branch 12
 		Cart anOrder = new Cart();
 
 		DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f);
