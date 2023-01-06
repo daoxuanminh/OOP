@@ -11,6 +11,10 @@ public class Book {
 
 	}
 
+	public Book(String title, String category, float cost) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setAuthors(List<String> authors) {
 		this.authors = authors;
 	}

@@ -1,6 +1,5 @@
-package hust.soict.dsai.aims.media;
+package hust.soict.dsai.aims.disc;
 
-import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 
@@ -18,7 +17,7 @@ public class DigitalVideoDisc extends Media implements Playable {
 	}
 
 	public String getDirector() {
-		return director ;
+		return director;
 	}
 
 	public int getLength() {
@@ -61,6 +60,19 @@ public class DigitalVideoDisc extends Media implements Playable {
 		nbDigitalVideoDiscs++;
 		this.setId(nbDigitalVideoDiscs);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		DigitalVideoDisc disc = (DigitalVideoDisc) obj;
+		if (this.getTitle().equals(disc.getTitle()) && this.getCategory().equals(disc.getCategory())
+				&& this.getDirector().equals(disc.getDirector()) && this.getLength() == disc.getLength()
+				&& this.getCost() == disc.getCost()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	@Override
 	public String toString() {
 		String result = this.getId() + ".DVD-";
@@ -93,13 +105,9 @@ public class DigitalVideoDisc extends Media implements Playable {
 		return false;
 	}
 
-	public void play() throws PlayerException {
-		if(this.getLength()>0) {
-			System.out.println("Play DVD: " + this.getTitle());
-			System.out.println("DVD length: " + this.getLength());
-			}else {
-				throw new PlayerException("Error:DVD length is non-positive");
-			}
+	public void play() {
+		System.out.println("Play DVD: " + this.getTitle());
+		System.out.println("DVD length: " + this.getLength());
 	}
 
 }

@@ -3,13 +3,28 @@ package hust.soict.dsai.aims.media;
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable {
-
     private String artist;
-    private ArrayList<Track> tracks = new ArrayList<Track>();
 
+    private ArrayList<Track> tracks = new ArrayList<Track>();
+    
+    
     public CompactDisc(String director, int length, String title, String category, float cost, String artist,
             ArrayList<Track> tracks) {
         super(director, length, title, category, cost);
+        this.artist = artist;
+    }
+    
+    
+	public CompactDisc() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public void setTracks(ArrayList<Track> input) {
+    	this.tracks = input;
+    }
+    
+    public void setArtist(String artist) {
         this.artist = artist;
     }
 
@@ -22,7 +37,7 @@ public class CompactDisc extends Disc implements Playable {
             tracks.add(track);
             return;
         }
-        System.out.println("This track is already in list");
+        System.out.println("This track is already exist");
     }
 
     public void removeTrack(Track track) {
@@ -30,15 +45,15 @@ public class CompactDisc extends Disc implements Playable {
             tracks.remove(track);
             return;
         }
-        System.out.println("This track is present in List");
+        System.out.println("This track is not exist");
     }
 
     public int getLength() {
-        int sum = 0;
-        for (int i = 0; i < tracks.size(); ++i) {
-            sum += tracks.get(i).getLength();
+        int length = 0;
+        for (int i = 0; i < tracks.size(); i++) {
+            length += tracks.get(i).getLength();
         }
-        return sum;
+        return length;
     }
 
     public void play() {
